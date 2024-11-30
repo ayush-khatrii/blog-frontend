@@ -5,7 +5,7 @@ import { ThemeProvider } from 'next-themes'
 createRoot(document.getElementById('root')!).render(
   <>
     <ThemeProvider
-      defaultTheme='dark'
+      defaultTheme='light'
       attribute="class"
     >
       <App />

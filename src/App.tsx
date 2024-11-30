@@ -4,6 +4,7 @@ import SignIn from "./components/sign-in"
 import Layout from './components/Layout'
 import Blog from './components/Blog'
 import Homepage from './components/homepage'
+import BlogPost from './components/BlogPost'
 
 const App = () => {
   return (
@@ -15,7 +16,7 @@ const App = () => {
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/blogs" element={<Blog />} />
-            {/* <Route path="/blog/:id" element={<Blog />} /> */}
+            <Route path="/blog/:id" element={<BlogPost />} />
           </Routes>
         </Layout>
       </BrowserRouter>
