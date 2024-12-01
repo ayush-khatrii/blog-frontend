@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { ENV } from "@/config/conf";
 import { BLOG_POSTS } from "@/types";
 import { useQuery } from "@tanstack/react-query";
