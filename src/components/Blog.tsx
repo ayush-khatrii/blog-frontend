@@ -1,6 +1,5 @@
 import { useBlogs } from "@/hooks";
 import BlogCard from "./BlogCard"
-import Navbar from "./Navbar";
 import { Skeleton } from "./ui/skeleton";
 
 const Blog = () => {
@@ -12,7 +11,6 @@ const Blog = () => {
   }
   return (
     <>
-      <Navbar />
       <section className="mt-28">
         <div className="max-w-3xl mx-auto">
           {

@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import Navbar from "./Navbar";
 import { useBlog } from "@/hooks";
 import {
   Avatar,
@@ -29,7 +28,6 @@ const BlogPost = () => {
 
   return (
     <>
-      <Navbar />
       <section className="max-w-7xl mx-auto mt-32 px-5">
         <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-10">
           {/* Blog Content */}
