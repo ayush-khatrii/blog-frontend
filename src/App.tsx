@@ -5,6 +5,7 @@ import Layout from './components/Layout'
 import Blog from './components/Blog'
 import Homepage from './components/homepage'
 import BlogPost from './components/BlogPost'
+import ErrorPage from './components/Errorpage'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/blogs" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </Layout>
       </BrowserRouter>

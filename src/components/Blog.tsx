@@ -1,4 +1,4 @@
-import { useBlogs } from "@/hooks/useBlogs";
+import { useBlogs } from "@/hooks";
 import BlogCard from "./BlogCard"
 import Navbar from "./Navbar";
 import { Skeleton } from "./ui/skeleton";
@@ -51,7 +51,7 @@ const Blog = () => {
               </div>
               :
               <div>
-                {blogs && blogs.map((blog, idx) => (
+                {blogs?.map((blog, idx) => (
                   <div key={idx}>
                     <BlogCard
                       id={blog.id}
