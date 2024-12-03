@@ -11,6 +11,7 @@ const BlogCard = ({ title, author, content, createdAt, id }: BLOG_POSTS) => {
     year: "numeric"
   });
 
+  const previewContent = content.slice(0, 100) + "..."
   return (
     <div className="w-full rounded cursor-pointer">
       <Link to={`/blog/${id}`}>
@@ -34,7 +35,11 @@ const BlogCard = ({ title, author, content, createdAt, id }: BLOG_POSTS) => {
               </h1>
               <p className="text-base font-light">
                 {/* {content} */}
-                {content.slice(0, 100) + "..."}
+
+                <div
+                  className="prose dark:prose-dark max-w-full break-words overflow-hidden"
+                  dangerouslySetInnerHTML={{ __html: previewContent }}
+                />
               </p>
             </div>
           </div>
