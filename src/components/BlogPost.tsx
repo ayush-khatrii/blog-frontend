@@ -52,8 +52,8 @@ const BlogPost = () => {
             <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-10">
               {/* Blog Content */}
 
-              <div className="lg:max-w-3xl w-full">
-                <h1 className="md:text-5xl text-2xl font-bold mb-6">{blogPost.title}</h1>
+              <div className="lg:max-w-5xl w-full">
+                <h1 className="md:text-4xl text-2xl font-bold mb-6">{blogPost.title}</h1>
                 <p className=" text-sm mb-6 opacity-50 ">Posted on: {date}</p>
                 <article className="text-lg dark:text-zinc-300 leading-relaxed">
                   <div
@@ -72,7 +72,7 @@ const BlogPost = () => {
                     <Avatar>
                       <AvatarFallback>SA</AvatarFallback>
                     </Avatar>
-                    <h1 className="text-xl capitalize font-semibold">{blogPost.author.name}</h1>
+                    <h1 className="text-xl capitalize font-semibold">{blogPost.author?.name}</h1>
                   </div>
                 </div>
                 <p className="text-sm">
