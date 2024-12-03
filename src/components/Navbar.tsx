@@ -52,9 +52,9 @@ const Navbar = () => {
     getProfile();
   }, []);
   return (
-    <header className="shadow-sm fixed w-full z-[200] overflow-hidden px-5 py-3 mb-10 bg-background dark:shadow-neutral-900 shadow-zinc-200">
+    <header className="border-b absolute border-foreground/5 w-full z-[200] overflow-hidden px-5 py-3 bg-transparent">
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/blogs" className="text-xl font-bold pl-5">DevLogs</Link>
+        <Link to="/" className="text-xl font-bold pl-5">DevLogs</Link>
         <nav>
           <ul className="flex space-x-2 pr-5">
             {
@@ -71,36 +71,39 @@ const Navbar = () => {
                 </Link>
             }
             <ThemeSwitchButton />
-            <div className="">
-              <DropdownMenu>
-                <DropdownMenuTrigger>
-                  <Avatar>
-                    <AvatarFallback className="capitalize">
-                      {userData && userData.username && userData.username?.slice(0, 2)}
-                    </AvatarFallback>
-                  </Avatar>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="mt-3 mx-10 overflow-hidden ">
-                  <DropdownMenuLabel>{userData?.name}</DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem asChild className="cursor-pointer">
-                    <Link to={`/dashboard`}>
-                      <ScrollText />Your posts
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem
-                    onClick={handleLogout}
-                    className="text-red-600 cursor-pointer hover:text-red-500">
-                    <LogOut />
-                    Log out</DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
+            {
+              isAuthenticated &&
+              <div className="">
+                <DropdownMenu>
+                  <DropdownMenuTrigger>
+                    <Avatar>
+                      <AvatarFallback className="capitalize">
+                        {userData && userData.username && userData.username?.slice(0, 2)}
+                      </AvatarFallback>
+                    </Avatar>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="mt-3 mx-10 overflow-hidden ">
+                    <DropdownMenuLabel>{userData?.name}</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem asChild className="cursor-pointer">
+                      <Link to={`/dashboard`}>
+                        <ScrollText />Your posts
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem
+                      onClick={handleLogout}
+                      className="text-red-600 cursor-pointer hover:text-red-500">
+                      <LogOut />
+                      Log out</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
+            }
           </ul>
         </nav>
       </div>
-    </header>
+    </header >
   )
 }
 
