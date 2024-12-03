@@ -54,14 +54,13 @@ const Navbar = () => {
   return (
     <header className="border-b border-foreground/5 w-full z-[200] overflow-hidden px-5 py-3 bg-transparent">
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-xl font-bold pl-5">DevLogs</Link>
+        <Link to="/" className="text-xl font-bold md:pl-5">DevLogs</Link>
         <nav>
-          <ul className="flex space-x-2 pr-5">
+          <ul className="flex space-x-2 md:pr-5">
             {
               !isAuthenticated ?
                 <>
-                  <li><Link to="/sign-in"><Button size="sm" variant="ghost">Sign In</Button></Link></li>
-                  <li><Link to="/sign-up"><Button size="sm">Sign Up</Button></Link></li>
+                  <li><Link to="/sign-in"><Button size="sm" variant="default">Sign In</Button></Link></li>
                 </>
                 :
                 <Link to="/create-blog">

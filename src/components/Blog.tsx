@@ -1,13 +1,17 @@
 import { useBlogs } from "@/hooks";
 import BlogCard from "./BlogCard"
 import { Skeleton } from "./ui/skeleton";
+import toast from "react-hot-toast";
 
 const Blog = () => {
   const { blogs, error, isLoading } = useBlogs();
   if (error) {
-    return <div>
-      {error.message}
-    </div>
+    toast.error(error.message)
+    return <>
+      <div className="flex justify-center items-center h-screen text-xl">
+        {error.message}
+      </div>
+    </>
   }
   return (
     <>
