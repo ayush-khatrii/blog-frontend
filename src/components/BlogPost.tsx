@@ -70,7 +70,7 @@ const BlogPost = () => {
 
                   <div className="flex justify-center items-center gap-2">
                     <Avatar>
-                      <AvatarFallback>SA</AvatarFallback>
+                      <AvatarFallback>{blogPost.author?.name.slice(0, 2)}</AvatarFallback>
                     </Avatar>
                     <h1 className="text-xl capitalize font-semibold">{blogPost.author?.name}</h1>
                   </div>
