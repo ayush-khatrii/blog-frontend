@@ -11,7 +11,12 @@ const Blog = () => {
   }
   return (
     <>
-      <section className="mt-28">
+      <section className="flex justify-evenly items-center flex-col mb-28">
+        <div className="w-full py-20 dark:bg-black bg-zinc-100 mb-10">
+          <h1 className="font-semibold md:text-4xl py-10  text-xl text-center">
+            Explore Inspiring Blogs
+          </h1>
+        </div>
         <div className="max-w-3xl mx-auto">
           {
             isLoading ?

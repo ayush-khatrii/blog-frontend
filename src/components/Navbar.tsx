@@ -52,7 +52,7 @@ const Navbar = () => {
     getProfile();
   }, []);
   return (
-    <header className="border-b absolute border-foreground/5 w-full z-[200] overflow-hidden px-5 py-3 bg-transparent">
+    <header className="border-b border-foreground/5 w-full z-[200] overflow-hidden px-5 py-3 bg-transparent">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-xl font-bold pl-5">DevLogs</Link>
         <nav>

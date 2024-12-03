@@ -48,6 +48,13 @@ const Dashboard = () => {
     getBlogPosts();
   }, []);
 
+  // @ts-ignore
+  if (posts?.length < 1) {
+    return <div className="flex text-xl justify-center items-center h-screen">
+      No blog posts found!
+    </div>
+  }
+
   return (
     <section className="max-w-7xl mx-auto px-3 my-14 overflow-hidden">
       <div>
