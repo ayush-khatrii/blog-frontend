@@ -16,15 +16,20 @@ const BlogCard = ({ title, author, content, createdAt, id }: BLOG_POSTS) => {
   return (
     <>
       <div className="w-full">
-        <Card className="flex max-w-2xl gap-3 px-3 py-4 flex-col">
+        <Card className="flex gap-3 px-3 py-4 flex-col">
           <div className="flex gap-2 mt-4 justify-start items-center">
-            <Avatar>
-              <AvatarFallback>{author?.name.slice(0, 2)}</AvatarFallback>
-            </Avatar>
-            <h1 className="text-base my-3">{author?.name}</h1>
+            {
+              author &&
+              <div className="flex justify-center items-center gap-2">
+                <Avatar>
+                  <AvatarFallback>{author?.name.slice(0, 2)}</AvatarFallback>
+                </Avatar>
+                <h1 className="text-base my-3">{author?.name}</h1>
 
-            <div className="w-1 h-1 bg-foreground rounded-full opacity-70">
-            </div>
+                <div className="w-1 h-1 bg-foreground rounded-full opacity-70">
+                </div>
+              </div>
+            }
             <span className="lg:text-sm text-base">
               {date}
             </span>
@@ -46,8 +51,8 @@ const BlogCard = ({ title, author, content, createdAt, id }: BLOG_POSTS) => {
               </Link>
             </div>
           </div>
-        </Card>
-      </div>
+        </Card >
+      </div >
     </>
   )
 }
