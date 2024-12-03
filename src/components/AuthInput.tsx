@@ -7,6 +7,7 @@ import { SignUpInputs } from "hono-blog-common"
 import { ENV } from "@/config/conf";
 import { useToast } from "@/hooks/use-toast"
 import { Loader2 } from "lucide-react"
+import { useAuthStore } from "@/store/authstore"
 
 const AuthInput = ({ isSignIn }: { isSignIn: boolean }) => {
   const [authInputs, setAuthInputs] = useState<SignUpInputs>({
@@ -18,6 +19,7 @@ const AuthInput = ({ isSignIn }: { isSignIn: boolean }) => {
   const navigate = useNavigate();
   const { toast } = useToast();
 
+  const { login } = useAuthStore();
   const handleShowToast = (text: string) => {
     toast({
       title: `${text} successful`,
@@ -25,7 +27,6 @@ const AuthInput = ({ isSignIn }: { isSignIn: boolean }) => {
   }
 
   const handleSubmit = async () => {
-    console.log(authInputs);
     try {
       setLoading(true);
       const resp = await fetch(`${ENV.apiUrl}/user/${isSignIn ? "signin" : "signup"}`, {
@@ -36,6 +37,7 @@ const AuthInput = ({ isSignIn }: { isSignIn: boolean }) => {
         const result = await resp.json();
         const jwtToken = result.token;
         localStorage.setItem("auth-token", jwtToken);
+        login();
         navigate("/blogs");
         isSignIn ? handleShowToast("Sign-In") : handleShowToast("Sign-Up")
       }

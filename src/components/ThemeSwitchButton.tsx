@@ -7,7 +7,7 @@ const ThemeSwitchButton = () => {
   return (
     <Button
       className="rounded-full"
-      variant="outline"
+      variant="ghost"
       onClick={() => {
         setTheme(theme === "light" ? "dark" : "light");
       }}
