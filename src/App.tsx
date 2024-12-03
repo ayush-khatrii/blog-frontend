@@ -8,6 +8,7 @@ import BlogPost from './components/BlogPost'
 import ErrorPage from './components/Errorpage'
 import Createblog from './components/Createblog'
 import Dashboard from './components/Dashboard'
+import EditBlog from './components/EditBlog'
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/create-blog" element={<Createblog />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/blog/:id/edit" element={<EditBlog />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </Layout>

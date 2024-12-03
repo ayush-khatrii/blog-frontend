@@ -12,6 +12,7 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu"
 import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const [posts, setPosts] = useState<BLOG_POSTS[]>();
@@ -53,6 +54,10 @@ const Dashboard = () => {
     return <div className="flex text-xl justify-center items-center h-screen">
       No blog posts found!
     </div>
+  }
+
+  const handlePostEdit = () => {
+
   }
 
   return (
@@ -114,9 +119,11 @@ const Dashboard = () => {
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent>
-                        <DropdownMenuItem className="cursor-pointer">
-                          <Edit2 />
-                          Edit
+                        <DropdownMenuItem asChild onClick={handlePostEdit} className="cursor-pointer">
+                          <Link to={`/blog/${item.id}/edit`}>
+                            <Edit2 />
+                            Edit
+                          </Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem className="cursor-pointer text-red-500">
                           <Trash2 />
@@ -124,8 +131,6 @@ const Dashboard = () => {
                         </DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
-
-
                   </div>
                 </div>
               ))}
