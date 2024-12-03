@@ -19,7 +19,7 @@ const BlogCard = ({ title, author, content, createdAt, id }: BLOG_POSTS) => {
         <Card className="flex max-w-2xl gap-3 px-3 py-4 flex-col">
           <div className="flex gap-2 mt-4 justify-start items-center">
             <Avatar>
-              <AvatarFallback>ak</AvatarFallback>
+              <AvatarFallback>{author?.name.slice(0, 2)}</AvatarFallback>
             </Avatar>
             <h1 className="text-base my-3">{author?.name}</h1>
 
