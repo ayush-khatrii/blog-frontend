@@ -13,9 +13,6 @@ export const useBlogs = (): {
   const fetchBlogs = async () => {
     const resp = await fetch(`${apiUrl}/blog`, {
       method: "GET",
-      headers: {
-        Authorization: localStorage.getItem("auth-token") || "",
-      },
     });
 
     if (!resp.ok) {
@@ -52,9 +49,6 @@ export const useBlog = (id: number): {
     if (!id) throw new Error("Blog ID is required");
     const resp = await fetch(`${apiUrl}/blog/${id}`, {
       method: "GET",
-      headers: {
-        Authorization: localStorage.getItem("auth-token") || "",
-      },
     });
 
     if (!resp.ok) {
