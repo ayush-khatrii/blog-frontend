@@ -54,7 +54,7 @@ const Navbar = () => {
   return (
     <header className="border-b border-foreground/5 w-full z-[200] overflow-hidden px-5 py-3 bg-transparent">
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-xl font-bold md:pl-5">DevLogs</Link>
+        <Link to="/" className="text-xl font-bold md:pl-5">TechLogs</Link>
         <nav>
           <ul className="flex space-x-2 md:pr-5">
             {

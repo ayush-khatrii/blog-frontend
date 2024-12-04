@@ -91,7 +91,7 @@ const AuthInput = ({ isSignIn }: { isSignIn: boolean }) => {
         {
           isSignIn ?
             <p>
-              New to DevLogs? {""}
+              New to TechLogs? {""}
               <Link to={`/sign-up`} className="opacity-50 underline">
                 Create Account
               </Link>
