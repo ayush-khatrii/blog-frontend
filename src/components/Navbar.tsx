@@ -36,8 +36,6 @@ const Navbar = () => {
       });
       const data = await resp.json();
       setUserData(data.userData);
-      console.log('user data : ', data);
-
     } catch (error: any) {
       toast.error(error.message);
     }

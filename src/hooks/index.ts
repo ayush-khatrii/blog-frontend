@@ -26,8 +26,7 @@ export const useBlogs = (): {
     queryKey: ["blogs"],
     queryFn: fetchBlogs,
     staleTime: 10000,
-    refetchInterval: 5000,
-    refetchOnWindowFocus: true,
+    retry: false,
   });
 
   return {
@@ -43,7 +42,6 @@ export const useBlog = (id: number): {
   isLoading: boolean;
 } => {
   const { apiUrl } = ENV;
-  console.log("id from hoooooooooooooook raja ji:::", id);
 
   const fetchBlogs = async (id: number) => {
     if (!id) throw new Error("Blog ID is required");
@@ -62,6 +60,7 @@ export const useBlog = (id: number): {
   const { data: blogPost, error, isLoading } = useQuery({
     queryKey: ["blog", id], // Unique key for this query
     queryFn: () => fetchBlogs(id),
+    retry: false,
   });
 
   return {

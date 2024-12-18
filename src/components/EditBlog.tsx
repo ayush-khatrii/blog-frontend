@@ -1,16 +1,18 @@
 import { ENV } from "@/config/conf";
 import { Loader2 } from "lucide-react";
 import { useState } from "react";
-import ReactQuill from "react-quill";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import toast from "react-hot-toast";
+import Editor from "./EditorWrapper";
+import { JSONContent } from "novel";
+import { Label } from "./ui/label";
 
 const EditBlog = () => {
   const { id } = useParams();
   const [title, setTitle] = useState('');
-  const [content, setContent] = useState('# Hello Editor');
+  const [content, setContent] = useState<JSONContent | undefined>();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -41,29 +43,32 @@ const EditBlog = () => {
     <section className="max-w-7xl mx-auto mt-36 px-5">
       {/* text editor */}
       <div className="flex w-full justify-center items-start flex-col gap-5">
-        <Input
-          required
-          className="rounded-none"
-          onChange={(e) => setTitle(e.target.value)}
-          type="text"
-          placeholder="Enter your blog title"
-        />
+        <div className="flex justify-center items-start flex-col gap-3 w-full">
+          <Label className="text-xl">
+            Blog post title
+          </Label>
+          <Input
+            required
+            onChange={(e) => setTitle(e.target.value)}
+            type="text"
+            placeholder="Enter your blog post title"
+          />
+        </div>
         <div className="w-full">
           {/* editor */}
-          <ReactQuill
-            className="border-none"
-            theme="snow"
-            value={content}
-            onChange={setContent}
-            placeholder="Start writing your blog..."
-          />
+          <div className="space-y-2">
+            <Label className="text-xl">
+              Blog post content
+            </Label>
+            <Editor onChange={setContent} initalValue={content} />
+          </div>
         </div>
         <Button
           disabled={loading}
           onClick={handleEditBlog}
           className="w-full my-5">
           {loading && <Loader2 className="animate-spin" />}
-          Update Blog
+          Publish Blog
         </Button>
       </div>
     </section>

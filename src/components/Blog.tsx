@@ -2,17 +2,23 @@ import { useBlogs } from "@/hooks";
 import BlogCard from "./BlogCard"
 import { Skeleton } from "./ui/skeleton";
 import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 
 const Blog = () => {
   const { blogs, error, isLoading } = useBlogs();
   if (error) {
     toast.error(error.message)
-    return <>
-      <div className="flex justify-center items-center h-screen text-xl">
-        {error.message}
-      </div>
-    </>
+    return (
+      <>
+        <div className="w-full flex justify-center items-center text-center">
+          <h1 className="font-semibold md:text-4xl py-10  text-xl text-center">
+            {error.message}
+          </h1>
+        </div>
+      </>
+    );
   }
+
   return (
     <>
       <section className="flex justify-evenly items-center flex-col mb-28">

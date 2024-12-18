@@ -2,6 +2,10 @@ import { BLOG_POSTS } from "@/types"
 import { Avatar, AvatarFallback } from "./ui/avatar"
 import { Link } from "react-router-dom";
 import { Card } from "./ui/card";
+import RenderBlogPost from "./RenderBlogPost";
+import { JSONContent } from "novel";
+// import RenderBlogPost from "./RenderBlogPost";
+// import { JSONContent } from "novel";
 
 
 const BlogCard = ({ title, author, content, createdAt, id }: BLOG_POSTS) => {
@@ -12,7 +16,7 @@ const BlogCard = ({ title, author, content, createdAt, id }: BLOG_POSTS) => {
     year: "numeric"
   });
 
-  const previewContent = content.slice(0, 100) + "..."
+  // const previewContent = content.slice(0, 100) + "..."
   return (
     <>
       <div className="w-full">
@@ -41,12 +45,9 @@ const BlogCard = ({ title, author, content, createdAt, id }: BLOG_POSTS) => {
                   {title ? title : "**TITLE NOT PROVIDED**"}
                 </h1>
                 <p className="text-base my-2 font-light">
-                  {/* {content} */}
-
-                  <div
-                    className="prose dark:prose-dark max-w-full break-words overflow-hidden"
-                    dangerouslySetInnerHTML={{ __html: previewContent }}
-                  />
+                  <RenderBlogPost
+                    isHomPage={true}
+                    json={content as JSONContent} />
                 </p>
               </Link>
             </div>
