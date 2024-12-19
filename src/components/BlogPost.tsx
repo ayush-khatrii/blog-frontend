@@ -26,7 +26,7 @@ const BlogPost = () => {
     return (
       <>
         <div className="w-full flex justify-center items-center text-center">
-          <h1 className="font-semibold md:text-4xl py-10  text-xl text-center">x
+          <h1 className="font-semibold md:text-4xl py-10  text-xl text-center">
             {error.message}
           </h1>
         </div>
@@ -38,23 +38,14 @@ const BlogPost = () => {
       <section className="max-w-7xl mx-auto my-20 px-5">
         {
           isLoading ?
-            <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-10">
+            <div className="grid grid-cols-1  gap-10">
               <div>
-                <div className="flex mb-4 justify-start flex-col items-start gap-4">
-                  <Skeleton className="h-4 w-[250px]" />
+                <div className="flex justify-center flex-col items-center gap-4 mb-10">
+                  <Skeleton className="h-8 w-full  mb-5" />
                   <Skeleton className="h-4 w-[250px]" />
                 </div>
                 <div className="space-y-4">
-                  <Skeleton className="h-[200px] md:w-[600px] w-full" />
-                </div>
-              </div>
-              <div>
-                <div className="flex mb-4 justify-start items-start gap-4">
-                  <Skeleton className="h-5 w-5 rounded-full" />
-                  <Skeleton className="h-4 w-[100px]" />
-                </div>
-                <div className="space-y-4">
-                  <Skeleton className="h-4 w-[300px]" />
+                  <Skeleton className="h-[500px] md:w-full w-full" />
                 </div>
               </div>
             </div>
@@ -62,7 +53,7 @@ const BlogPost = () => {
             <div className="flex justify-center items-start gap-20 flex-col">
               {/* Blog Content */}
               <div className="w-full">
-                <div className="flex justify-center items-center flex-col mb-10">
+                <div className="flex justify-center items-center flex-col">
                   <h1 className="md:text-4xl text-xl text-center md:text-left font-bold md:leading-snug mb-5">{blogPost.title}</h1>
                   <div className="flex justify-center items-center gap-2">
                     <div className="flex justify-center items-center gap-2">
