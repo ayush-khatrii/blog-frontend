@@ -1,6 +1,6 @@
 # 🚀 TechLogs – Modern Blog Platform
 
-![TechLogs Preview](https://techlogs.vercel.app/preview.png)  
+![TechLogs Preview](https://techlogs.vercel.app/preview-img.png)  
 *A fast, scalable blog app built with Hono, React, Prisma & PostgreSQL, deployed on Cloudflare Workers.*
 
 ## 🌟 Features
