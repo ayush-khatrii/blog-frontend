@@ -61,6 +61,7 @@ const Createblog = () => {
             <Editor onChange={setContent} initalValue={content} />
           </div>
         </div>
+        <p className="my-1 text-sm">type "/" to activate slash command</p>
         <Button
           disabled={loading}
           onClick={handlePublishBlog}
